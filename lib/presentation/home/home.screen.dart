@@ -1,21 +1,25 @@
+import '/presentation/shared/loading/base.widget.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
-import 'controllers/home.controller.dart';
+import './controllers/home.controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('HomeScreen'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'HomeScreen is working',
-          style: TextStyle(fontSize: 20),
+    return BaseWidget(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('HomeScreen'),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Obx(
+            () => Text(
+              'Logado com: ${controller.user.value?.name ?? 'Ops'}',
+              style: const TextStyle(fontSize: 20),
+            ),
+          ),
         ),
       ),
     );

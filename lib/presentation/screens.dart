@@ -1,1 +1,3 @@
-export 'package:getx_clean_boilerplate/presentation/home/home.screen.dart';
+export './home/home.screen.dart';
+export './login/login.screen.dart';
+export 'login/login.screen.dart';

@@ -1,1 +1,2 @@
-export 'package:getx_clean_boilerplate/infrastructure/navigation/bindings/controllers/home.controller.binding.dart'; 
+export 'home.controller.binding.dart';
+export 'login.controller.binding.dart';

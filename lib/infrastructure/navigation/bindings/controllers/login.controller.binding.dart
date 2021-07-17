@@ -1,14 +1,13 @@
 import '/infrastructure/navigation/bindings/domains/auth.repository.binding.dart';
-import '/presentation/home/controllers/home.controller.dart';
 import 'package:get/get.dart';
+import '/presentation/login/controllers/login.controller.dart';
 
-class HomeControllerBinding extends Bindings {
+class LoginControllerBinding extends Bindings {
   @override
   void dependencies() {
     final authRepositoryBinding = AuthRepositoryBinding();
 
-    Get.lazyPut<HomeController>(
-      () => HomeController(authRepository: authRepositoryBinding.repository),
+    Get.lazyPut<LoginController>(() => LoginController(authRepository: authRepositoryBinding.repository),
     );
   }
 }
