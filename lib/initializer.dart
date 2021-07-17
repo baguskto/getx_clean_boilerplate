@@ -59,7 +59,7 @@ class Initializer {
       },
     );
 
-    Logger().i('Conectado em: $url');
+    Logger().i('connected to: $url');
     Get.put(connect);
   }
 

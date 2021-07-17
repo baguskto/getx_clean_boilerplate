@@ -4,7 +4,7 @@ class InternetFailedException implements Exception {
   final String message;
 
   InternetFailedException({
-    this.message = 'Falha ao conectar com o servidor!',
+    this.message = 'Failed to connect to server!',
   }) {
     Logger().w(message);
   }

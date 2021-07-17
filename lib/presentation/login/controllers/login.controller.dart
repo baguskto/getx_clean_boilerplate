@@ -10,7 +10,9 @@ import 'package:get/get.dart';
 class LoginController extends GetxController {
   final AuthRepository _authRepository;
   final _loadingController = Get.find<LoadingController>();
-  LoginController({required AuthRepository authRepository}) : _authRepository = authRepository;
+
+  LoginController({required AuthRepository authRepository})
+      : _authRepository = authRepository;
 
   @override
   void onInit() {
@@ -19,7 +21,9 @@ class LoginController extends GetxController {
     ever<String>(password, validatePassword);
   }
 
+  get oklogin => doLogin();
   Future<void> doLogin() async {
+    print('login');
     try {
       _loadingController.isLoading = true;
       if (validateFields()) {
@@ -54,6 +58,7 @@ class LoginController extends GetxController {
   final login = ''.obs;
   final loginError = RxnString();
   final loginFocus = FocusNode();
+
   void validateLogin(String val) {
     if (val.isEmpty) {
       loginError.value = 'Digite seu login';
@@ -67,6 +72,7 @@ class LoginController extends GetxController {
   final password = ''.obs;
   final passwordError = RxnString();
   final passwordFocus = FocusNode();
+
   void validatePassword(String val) {
     if (val.isEmpty) {
       passwordError.value = 'Digite sua senha';
@@ -77,9 +83,9 @@ class LoginController extends GetxController {
     }
   }
 
+
+
   bool get enableButton =>
       login.isNotEmpty &&
-      password.isNotEmpty &&
-      loginError.value != null &&
-      passwordError.value != null;
+      password.isNotEmpty;
 }

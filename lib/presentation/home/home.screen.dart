@@ -16,7 +16,7 @@ class HomeScreen extends GetView<HomeController> {
         body: Center(
           child: Obx(
             () => Text(
-              'Logado com: ${controller.user.value?.name ?? 'Ops'}',
+              'logged in with: ${controller.user.value?.name ?? 'Oops'}',
               style: const TextStyle(fontSize: 20),
             ),
           ),

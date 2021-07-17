@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginButtonWidget extends GetView<LoginController> {
+
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: controller.enableButton ? controller.doLogin : null,
+    return  ElevatedButton(
+      onPressed: () =>
+      controller.enableButton ? controller.oklogin : null,
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(Get.theme.primaryColor),
       ),
